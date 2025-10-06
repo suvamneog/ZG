@@ -8,22 +8,28 @@ import Filmography from './pages/Filmography'
 import Gallery from './pages/Gallery'
 import Tributes from './pages/Tributes'
 import Community from './pages/Community'
+import VirtualStudio from './pages/VirtualStudio'
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/achievements" element={<Achievements />} />
-          <Route path="/discography" element={<Discography />} />
-          <Route path="/filmography" element={<Filmography />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/tributes" element={<Tributes />} />
-          <Route path="/community" element={<Community />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/virtual-studio" element={<VirtualStudio />} />
+        <Route path="*" element={
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/achievements" element={<Achievements />} />
+              <Route path="/discography" element={<Discography />} />
+              <Route path="/filmography" element={<Filmography />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/tributes" element={<Tributes />} />
+              <Route path="/community" element={<Community />} />
+            </Routes>
+          </Layout>
+        } />
+      </Routes>
     </Router>
   )
 }

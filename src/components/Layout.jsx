@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Music, Award, Film, Camera, Heart } from 'lucide-react'
+import { Menu, X, Music, Award, Film, Camera, Heart, Gamepad2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Layout = ({ children }) => {
@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
     { name: 'Gallery', href: '/gallery', icon: Camera },
     { name: 'Tribute Wall', href: '/tributes', icon: Heart },
     { name: 'Community', href: '/community', icon: Heart },
+    { name: 'Virtual Studio', href: '/virtual-studio', icon: Gamepad2 },
   ]
 
   return (
