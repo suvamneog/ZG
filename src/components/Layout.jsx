@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
     { name: 'Filmography', href: '/filmography', icon: Film },
     { name: 'Gallery', href: '/gallery', icon: Camera },
     { name: 'Tribute Wall', href: '/tributes', icon: Heart },
+    { name: 'Community', href: '/community', icon: Heart },
   ]
 
   return (

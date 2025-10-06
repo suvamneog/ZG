@@ -7,6 +7,7 @@ import Discography from './pages/Discography'
 import Filmography from './pages/Filmography'
 import Gallery from './pages/Gallery'
 import Tributes from './pages/Tributes'
+import Community from './pages/Community'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/filmography" element={<Filmography />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/tributes" element={<Tributes />} />
+          <Route path="/community" element={<Community />} />
         </Routes>
       </Layout>
     </Router>

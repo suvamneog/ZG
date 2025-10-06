@@ -6,6 +6,9 @@ import { Button } from '../components/ui/button'
 import { Dialog, DialogContent } from '../components/ui/dialog'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 
+// Import your local image
+import zgImage from './zg.jpeg'
+import movieImage from './photos/movie/movie.webp'
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([])
@@ -13,7 +16,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Sample data for demonstration
+  // Sample data for demonstration - now includes your local image
   const sampleGallery = [
     {
       id: 1,
@@ -59,9 +62,16 @@ const Gallery = () => {
     },
     {
       id: 8,
-      imageUrl: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg',
+      imageUrl: movieImage,
       caption: 'Film shooting',
       category: 'movies'
+    },
+    // Add your local image to fanart category
+    {
+      id: 9,
+      imageUrl: zgImage,
+      caption: 'Zubeen Garg Portrait by Mrinmoy Kalita',
+      category: 'fanart'
     }
   ]
 
@@ -131,15 +141,16 @@ const Gallery = () => {
 
         {/* Gallery Tabs */}
         <Tabs defaultValue="all" className="mb-8">
-          <TabsList className="grid w-full grid-cols-5 max-w-2xl mx-auto">
+          <TabsList className="grid w-full grid-cols-6 max-w-2xl mx-auto">
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="concerts">Concerts</TabsTrigger>
             <TabsTrigger value="studio">Studio</TabsTrigger>
             <TabsTrigger value="movies">Movies</TabsTrigger>
             <TabsTrigger value="awards">Awards</TabsTrigger>
+            <TabsTrigger value="fanart">Fan Art</TabsTrigger>
           </TabsList>
 
-          {['all', 'concerts', 'studio', 'movies', 'awards'].map((category) => (
+          {['all', 'concerts', 'studio', 'movies', 'awards', 'fanart'].map((category) => (
             <TabsContent key={category} value={category} className="mt-12">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {getFilteredImages(category).map((image, index) => (
